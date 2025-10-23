@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@500&family=Poppins:wght@400;500;600&display=swap");
+
+/* RESET DASAR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Mitr", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: url("../img/welcome.jpg") no-repeat center center/cover;
+}
+
+/* Overlay hitam */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+/* Container utama */
+.container {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  border-radius: 0px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: url("../img/welcome.jpg") no-repeat center center/cover;
+}
+
+/* Bagian kiri (welcome) */
+.left {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.left h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.left p {
+  font-family: "Mingzat", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  width: 80%;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Bagian kanan (form login) */
+.right {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 60px 80px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right h2 {
+  font-size: 30px;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Form Input */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 5px;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tombol */
+button {
+  background: #074b0a;
+  color: #fff;
+  border: none;
+  width: 160px;
+  height: 46px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background: #0b6610;
+  transform: scale(1.03);
+}
+
+/* Link Sign Up & Forgot Password */
+/* Sign Up & Forgot Password Centered */
+.signup-link,
+.forgot-password {
+  display: flex;
+  justify-content: center; /* center horizontal */
+  font-family: "Mingzat", sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link a {
+  margin-left: 5px; /* kasih jarak 5px dari "Or" */
+  color: #0c8712;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.forgot-password a {
+  color: #0c8712;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+/* Optional: spasi antar keduanya */
+.forgot-password {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.forgot-password a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+
+  .left,
+  .right {
+    padding: 40px;
+  }
+
+  .left h1 {
+    font-size: 36px;
+  }
+
+  .right h2 {
+    font-size: 28px;
+  }
+}

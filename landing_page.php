@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Organify</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mingzat&family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mitr";
+  }
+
+  body {
+    background-color: #f3f5f2;
+    color: #333;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('assets/img/welcome.jpg') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+    z-index: 2;
+    font-weight: 500;
+  }
+
+  .hero p {
+    z-index: 2;
+    max-width: 600px;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-family: "Mingzat";
+  }
+
+  /* SEARCH BOX */
+  .search-box {
+    position: relative;
+    margin-top: -30px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-box input {
+    padding: 12px 15px;
+    width: 60%;
+    max-width: 400px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+  }
+
+  .search-box button {
+    background-color: #124d25;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+  }
+
+  /* MAP */
+  .map {
+    width: 90%;
+    height: 350px;
+    margin: 30px auto;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+  }
+
+  /* BUTTON SETOR */
+  .btn-setor {
+    display: block;
+    width: 90%;
+    margin: 0 auto 30px auto;
+    background-color: #124d25;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* STATISTIK */
+  .stats {
+    background: white;
+    width: 90%;
+    margin: 0 auto 20px;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .stats h3 {
+    margin-bottom: 10px;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat h2 {
+    color: #124d25;
+  }
+
+  /* AKTIVITAS TERBARU */
+  .activity {
+    background: white;
+    width: 90%;
+    margin: 0 auto 20px;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .activity-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+
+  .activity-item:last-child {
+    border-bottom: none;
+  }
+
+  .activity small {
+    color: gray;
+  }
+
+  .lihat-semua {
+    text-align: right;
+    color: #124d25;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    display: block;
+  }
+
+  /* REWARD */
+  .reward {
+    background: linear-gradient(to right, #1b8f3a, #0a4d1b);
+    color: white;
+    border-radius: 15px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .reward-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .reward h4 {
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  /* TUTORIAL */
+  .tutorial {
+    background: #eef5ee;
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .tutorial h2 {
+    text-align: center;
+    color: #124d25;
+  }
+
+  .tutorial small {
+    display: block;
+    text-align: center;
+    color: gray;
+    margin-bottom: 20px;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    gap: 15px;
+  }
+
+  .step-num {
+    width: 30px;
+    height: 30px;
+    background: #124d25;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 0.85rem;
+      padding: 0 10px;
+    }
+
+    .search-box input {
+      width: 70%;
+    }
+
+    .reward-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>ORGANIFY</h1>
+    <p>Langkah kecilmu mengelola sampah bisa membawa dampak besar — termasuk untuk dompetmu.</p>
+  </section>
+
+  <div class="search-box">
+    <input type="text" placeholder="🔍 Bank Sampah Terdekat" />
+    <button>Tampilkan</button>
+  </div>
+
+  <div class="map"></div>
+
+  <div class="btn-setor">♻️ SETOR SAMPAH</div>
+
+  <section class="stats">
+    <h3>Statistik Hari Ini</h3>
+    <div class="stats-container">
+      <div class="stat">
+        <h2>12</h2>
+        <p>Bank Sampah</p>
+      </div>
+      <div class="stat">
+        <h2 style="color:#1553a3;">15Kg</h2>
+        <p>Total Sampah</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="activity">
+    <h3>Aktivitas Terbaru</h3>
+    <div class="activity-item">
+      <div>
+        <b>Setor Sampah Sisa Makanan</b>
+        <br><small>5 jam yang lalu</small>
+      </div>
+      <span style="color:#124d25;">+100</span>
+    </div>
+    <div class="activity-item">
+      <div>
+        <b>Setor Sampah Sisa Buah dan Sayur</b>
+        <br><small>2 hari yang lalu</small>
+      </div>
+      <span style="color:#124d25;">+240</span>
+    </div>
+    <div class="activity-item">
+      <div>
+        <b>Setor Sampah Daun Pertanian</b>
+        <br><small>1 minggu yang lalu</small>
+      </div>
+      <span style="color:#124d25;">+3000</span>
+    </div>
+    <a href="#" class="lihat-semua">LIHAT SEMUA</a>
+  </section>
+
+  <section class="reward">
+    <h4>Reward Poin</h4>
+    <div class="reward-content">
+      <div>
+        <h2>12Kg</h2>
+        <p>Sampah Organik</p>
+      </div>
+      <div>
+        <h2>100</h2>
+        <p>Poin</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tutorial">
+    <h2>TUTORIAL</h2>
+    <small>4 langkah mudah untuk mulai kontribusi Anda!</small>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <b>Cari Lokasi</b><br>
+        <small>Temukan bank sampah terdekat di sekitar Anda</small>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <b>Setor Sampah</b><br>
+        <small>Bawa sampah organik yang sudah dipilah ke lokasi</small>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <b>Dapat Poin</b><br>
+        <small>Terima poin reward sesuai sampah yang disetor</small>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <b>Tukar Poin</b><br>
+        <small>Tukarkan poin dengan e-wallet tertentu</small>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
