@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
+  <title>Log In</title>
   <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Mingzat&family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
@@ -17,7 +17,7 @@
     body {
       background: 
         linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
-        url('items/Rectangle 3.png') no-repeat center center/cover;
+        url('assets/img/welcome.jpg') no-repeat center center/cover;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -45,7 +45,7 @@
       position: relative;
       background: 
         linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
-        url('items/Rectangle 3.png') center center/cover; /* Gambar layer tambahan */
+        url('assets/img/welcome.jpg') center center/cover; /* Gambar layer tambahan */
     }
 
     .left h1 {
@@ -122,19 +122,21 @@
       background: #009900;
     }
 
-    .login-link {
+    .right a {
+      text-align: center;
+      color: #4CAF50;
+      text-decoration: none;
+      padding-top: 15px;
+    }
+
+    .forgot-password {
       text-align: center;
       margin-top: 10px;
       font-size: 14px;
       font-family: 'mingzat';
     }
 
-    .login-link a {
-      color: #4CAF50;
-      text-decoration: none;
-    }
-
-    .login-link a:hover {
+    .forgot-password a:hover {
       text-decoration: underline;
     }
 
@@ -177,15 +179,14 @@
     </div>
 
     <div class="right">
-      <h2>Sign Up</h2>
+      <h2>Log In</h2>
       <form>
-        <input type="text" placeholder="Your Name..." required />
         <input type="email" placeholder="Your Email" required />
         <input type="password" placeholder="Create Password" required />
-        <input type="password" placeholder="Repeat Your Password" required />
-        <button type="submit" class="btn">Sign Up</button>
+        <button type="submit" class="btn">Log In</button>
       </form>
-      <p class="login-link">Already Have An Account? <a href="#">Login Here</a></p>
+      <a href="signIn.html">or Sign Up</a>
+      <p class="forgot-password">Forgot Password? </p>
     </div>
   </div>
 </body>
