@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setor Sampah Organik</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Mingzat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/setor.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="overlay"></div>
+      <button class="back-btn">←</button>
+      <div class="hero-text">
+        <img src="assets/img/header setor.png" alt="" />
+        <h1>Setor Sampah Organik</h1>
+        <p>Setorkan sampahmu sekarang dan raih hadiahnya.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Pilih jenis sampah organik</h2>
+
+      <div class="waste-grid">
+        <div class="waste-card red">
+          <img src="assets/img/sisa makanan.png" alt="" />
+          <p>Sampah Sisa Makanan</p>
+        </div>
+        <div class="waste-card green">
+          <img src="assets/img/sisa buah sayur.png" alt="" />
+          <p>Sampah Sisa Buah & Sayur</p>
+        </div>
+        <div class="waste-card yellow">
+          <img src="assets/img/sisa hewani.png" alt="" />
+          <p>Sampah Hewani</p>
+        </div>
+        <div class="waste-card pink">
+          <img src="assets/img/sisa pertanian.png" alt="" />
+          <p>Sampah Pertanian</p>
+        </div>
+        <div class="waste-card cyan">
+          <img src="assets/img/kotoran hewan.png" alt="" />
+          <p>Sampah Kotoran Hewan</p>
+        </div>
+        <div class="waste-card purple">
+          <img src="assets/img/daun kering.png" alt="" />
+          <p>Sampah Daun & Ranting Kering</p>
+        </div>
+      </div>
+
+      <label for="berat">Berat Sampah (kg)</label>
+      <input type="number" id="berat" placeholder="0.0" min="0" step="0.1" />
+
+      <label for="bank">Pilih bank sampah terdekat</label>
+      <select id="bank">
+        <option>Bank Sampah Hijau Segar - Jl. Kampus Udayana XI No. 20</option>
+        <option>Bank Sampah Citra Bersih - Jl. Melati No. 15</option>
+        <option>Bank Sampah Harapan Lestari - Jl. Kenanga No. 9</option>
+      </select>
+
+      <label for="foto">Upload Foto</label>
+      <div class="upload-box">
+        <input type="file" id="foto" accept=".jpg,.jpeg,.png" />
+        <div class="upload-placeholder">
+          <div class="circle"></div>
+          <p>Klik untuk upload foto sampah</p>
+          <small>Format: JPG, JPEG, PNG (Max. 5MB)</small>
+        </div>
+      </div>
+
+      <button class="submit-btn">SETOR</button>
+    </main>
+  </body>
+</html>
