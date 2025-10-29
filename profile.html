@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Saya</title>
+    <link rel="stylesheet" href="assets/css/profile.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <button class="back-btn">←</button>
+      <h1>Profil Saya</h1>
+      <button class="logout-btn">⎋</button>
+    </header>
+
+    <main class="container">
+      <section class="profile-card">
+        <div class="profile-header">
+          <div class="profile-icon"></div>
+          <div>
+            <h2>Anonim S.kom</h2>
+            <p>Bergabung sejak September 2024</p>
+          </div>
+          <button class="btn-save">SIMPAN</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat-box blue">
+            <div class="icon">⭐</div>
+            <h3>120</h3>
+            <p>Total Setor</p>
+          </div>
+          <div class="stat-box green">
+            <div class="icon">⚖️</div>
+            <h3>50Kg</h3>
+            <p>Total Berat</p>
+          </div>
+          <div class="stat-box yellow">
+            <div class="icon">🪙</div>
+            <h3>2.500</h3>
+            <p>Total Poin</p>
+          </div>
+          <div class="stat-box purple">
+            <div class="icon">🏆</div>
+            <h3>5</h3>
+            <p>Pencapaian</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-card">
+        <h2 class="info-title">👤 Info Profil</h2>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <label>Nama Lengkap</label>
+            <input type="text" value="Andi Pratama" readonly />
+          </div>
+          <div class="info-item">
+            <label>Email</label>
+            <input type="text" value="andipratama@gmail.com" readonly />
+          </div>
+          <div class="info-item">
+            <label>No. Telepon</label>
+            <input type="text" value="+62831-9876-4567" readonly />
+          </div>
+          <div class="info-item">
+            <label>Tanggal Lahir</label>
+            <input type="text" value="02-10-2005" readonly />
+          </div>
+          <div class="info-item full">
+            <label>Alamat</label>
+            <textarea readonly>Jl. Danau Bratan II No.9</textarea>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
