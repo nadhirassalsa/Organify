@@ -1,3 +1,4 @@
+/* ---------- RESET DASAR ---------- */
 * {
   box-sizing: border-box;
   font-family: "Mitr", sans-serif;
@@ -6,32 +7,35 @@
 body {
   margin: 0;
   background-color: #fff;
-  color: #000;
+  color: #000; /* ubah dari putih ke hitam biar teks kebaca */
 }
 
+/* ---------- HERO SECTION ---------- */
 .hero {
   position: relative;
   width: 100%;
   height: 280px;
-  background: url("close-up-hands-holding-bowl.jpg") center/cover no-repeat;
+  background: url("../img/header setor.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fffbfb;
+  isolation: isolate; /* biar overlay cuma ke bg, bukan ke teks */
 }
 
-.overlay {
+.hero::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(7, 75, 10, 0.75);
+  inset: 0;
+  background-color: rgb(7, 75, 10);
+  opacity: 0.6; /* makin kecil makin transparan */
+  z-index: 0;
 }
 
 .hero-text {
   position: relative;
   text-align: center;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -58,8 +62,13 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 2;
+  transition: background 0.2s;
+}
+.back-btn:hover {
+  background: #e6e6e6;
 }
 
+/* ---------- KONTEN UTAMA ---------- */
 .container {
   max-width: 1200px;
   margin: 40px auto;
@@ -71,6 +80,7 @@ h2 {
   margin-bottom: 20px;
 }
 
+/* ---------- GRID SAMPAH ---------- */
 .waste-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -81,15 +91,15 @@ h2 {
 .waste-card {
   border-radius: 30px;
   overflow: hidden;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background: #fff;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .waste-card:hover {
   transform: scale(1.02);
-  cursor: pointer;
 }
 
 .waste-card img {
@@ -103,7 +113,7 @@ h2 {
   padding: 15px 10px;
 }
 
-/* Warna kategori */
+/* ---------- WARNA KATEGORI ---------- */
 .red {
   border-color: #ff0000;
   background-color: #ffebeb;
@@ -135,6 +145,33 @@ h2 {
   color: #39038b;
 }
 
+/* ---------- SAAT DIKLIK / AKTIF ---------- */
+.red.active {
+  background-color: #700000;
+  color: #fff;
+}
+.green.active {
+  background-color: #007007;
+  color: #fff;
+}
+.yellow.active {
+  background-color: #706700;
+  color: #fff;
+}
+.pink.active {
+  background-color: #700058;
+  color: #fff;
+}
+.cyan.active {
+  background-color: #005870;
+  color: #fff;
+}
+.purple.active {
+  background-color: #130070;
+  color: #fff;
+}
+
+/* ---------- FORM INPUT ---------- */
 label {
   display: block;
   font-size: 1.3rem;
@@ -149,8 +186,10 @@ select {
   border-radius: 30px;
   border: 1px solid #ccc;
   box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
+/* ---------- UPLOAD FOTO ---------- */
 .upload-box {
   border: 3px dashed #000;
   border-radius: 30px;
@@ -191,6 +230,7 @@ select {
   font-weight: 300;
 }
 
+/* ---------- TOMBOL SUBMIT ---------- */
 .submit-btn {
   display: block;
   width: 250px;
@@ -205,12 +245,11 @@ select {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .submit-btn:hover {
   background: #0b6c10;
 }
 
-/* Responsif tambahan */
+/* ---------- RESPONSIF ---------- */
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2rem;
