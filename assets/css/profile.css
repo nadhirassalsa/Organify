@@ -54,10 +54,10 @@ body {
 
 .profile-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  text-align: center;
+  gap: 0.5rem;
 }
 
 .profile-icon {
@@ -65,13 +65,23 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
 }
 
 .profile-header h2 {
   margin: 0;
 }
 
+.stats {
+  margin-top: 1.5rem;
+}
+
 .btn-save {
+  align-self: flex-end;
   background: #074b0a;
   color: #fff;
   border: none;
@@ -80,6 +90,7 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  margin-top: -2.5rem;
 }
 
 .btn-save:hover {
@@ -141,30 +152,48 @@ body {
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem 2rem;
+  align-items: start;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
 }
 
 .info-item label {
-  display: block;
-  font-weight: 400;
-  color: #494a4a;
-  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.4rem;
 }
 
 .info-item input,
 .info-item textarea {
   width: 100%;
   background: #f9fafb;
-  border: 0.5px solid #494a4a;
+  border: 1px solid #b0b0b0;
   border-radius: 10px;
   padding: 0.7rem 1rem;
   font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.info-item textarea {
+  min-height: 45px;
   resize: none;
 }
 
 .info-item.full {
   grid-column: span 2;
+}
+
+/* Tambahan opsional untuk tampilan lebih lembut */
+.info-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
 }
 
 /* Responsiveness */
