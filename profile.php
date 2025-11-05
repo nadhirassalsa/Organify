@@ -2,23 +2,38 @@
 session_start();
 include 'config.php'; // pastikan file ini benar dan koneksi $conn aktif
 
-// Ambil ID user dari session (misalnya diset saat login)
 $id_user = $_SESSION['id_user'] ?? null;
 
-// Jika user sudah login, ambil datanya
 if ($id_user) {
-    $query = mysqli_query($conn, "SELECT nama, email, alamat, no_hp, tanggal_lahir FROM users WHERE id_user = '$id_user'");
+    // Ambil semua data yang dibutuhkan
+    $query = mysqli_query($conn, "
+        SELECT nama, email, alamat, no_hp, tanggal_lahir, 
+               total_setor, total_berat, total_poin 
+        FROM users 
+        WHERE id_user = '$id_user'
+    ");
     $user = mysqli_fetch_assoc($query);
+
+    // Ambil nilai-nilai agar tidak undefined
+    $total_setor = $user['total_setor'] ?? 0;
+    $total_berat = $user['total_berat'] ?? 0;
+    $total_poin  = $user['total_poin'] ?? 0;
+
 } else {
-    // Jika belum login, isi nilai default biar tidak error
+    // Default kalau belum login
     $user = [
         'nama' => '',
         'email' => '',
         'alamat' => '',
-        'no_hp' => ''
+        'no_hp' => '',
+        'tanggal_lahir' => '',
     ];
+    $total_setor = 0;
+    $total_berat = 0;
+    $total_poin  = 0;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
@@ -54,27 +69,23 @@ if ($id_user) {
         </div>
 
         <div class="stats">
-          <div class="stat-box blue">
-            <div class="icon">⭐</div>
-            <h3>120</h3>
-            <p>Total Setor</p>
-          </div>
-          <div class="stat-box green">
-            <div class="icon">⚖️</div>
-            <h3>50Kg</h3>
-            <p>Total Berat</p>
-          </div>
-          <div class="stat-box yellow">
-            <div class="icon">🪙</div>
-            <h3>2.500</h3>
-            <p>Total Poin</p>
-          </div>
-          <div class="stat-box purple">
-            <div class="icon">🏆</div>
-            <h3>5</h3>
-            <p>Pencapaian</p>
-          </div>
-        </div>
+  <div class="stat-box blue">
+    <div class="icon">⭐</div>
+    <h3><?php echo $total_setor; ?></h3>
+    <p>Total Setor</p>
+  </div>
+  <div class="stat-box green">
+    <div class="icon">⚖️</div>
+    <h3><?php echo $total_berat . 'Kg'; ?></h3>
+    <p>Total Berat</p>
+  </div>
+  <div class="stat-box yellow">
+    <div class="icon">🪙</div>
+    <h3><?php echo number_format($total_poin, 0, ',', '.'); ?></h3>
+    <p>Total Poin</p>
+  </div>
+</div>
+
       </section>
 
       <!-- Info Profil -->
