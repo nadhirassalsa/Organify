@@ -50,6 +50,18 @@ body {
   font-family: "Mingzat";
 }
 
+.user-logo {
+  position: absolute;
+  width: 50px; /* ukuran logo */
+  height: 50px;
+  top: 30px; /* jarak dari atas hero */
+  right: 30px; /* jarak dari kanan */
+  border-radius: 50%; /* biar bulat */
+  object-fit: cover; /* agar proporsional */
+  cursor: pointer; /* opsional, biar terlihat klikable */
+  z-index: 10; /* biar di atas elemen lain */
+}
+
 /* SEARCH BOX */
 .search-box {
   background: #E1EFE0;
@@ -251,6 +263,8 @@ body {
 <section class="hero">
   <h1>ORGANIFY</h1>
   <p>Langkah kecilmu mengelola sampah bisa membawa dampak besar — termasuk untuk dompetmu.</p>
+
+  <img src="assets/img/user icon.png" alt="User" class="user-logo">
 </section>
 
 <!-- SEARCH -->
