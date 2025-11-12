@@ -49,9 +49,13 @@ if ($id_user) {
   </head>
   <body>
     <header class="navbar">
-      <button class="back-btn">←</button>
+      <button class="back-btn">
+        <img src="assets/img/back button.png" />
+      </button>
       <h1>Profil Saya</h1>
-      <button class="logout-btn">⎋</button>
+      <button class="logout-btn">
+        <img src="assets/img/logout button.png"/>
+      </button>
     </header>
 
     <main class="container">
@@ -59,7 +63,7 @@ if ($id_user) {
       <section class="profile-card">
         <div class="profile-header">
           <div class="profile-icon">
-            <img src="assets/img/default-user.png" alt="Foto Profil Pengguna">
+            <img src="assets/img/user icon.png" alt="Foto Profil Pengguna">
           </div>
           <div>
             <h2><?= htmlspecialchars($user['nama']); ?></h2>
